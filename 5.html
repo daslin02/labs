@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countElement( text , element)
+        {
+            let count = 0;
+            for(i of text)
+            {
+                if (i == element) 
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        let myText = "hello world";
+        alert(countElement(myText , "l"));
+        alert(countElement(myText , "w"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(text , n)
+        {
+            let count = 0 ;
+            let convert = "";
+            for(i of text)
+            {
+                if (count == n)
+                {
+                    count = 1 ;
+                    convert += "</br>";
+                    convert+=i;
+                }
+                else
+                {
+                    count++;
+                    convert+=i;
+                }
+                
+            }
+            return convert;
+        }
+        let str = "hello world";
+        document.write(func(str , 3));
+    </script>
+</body>
+</html>
