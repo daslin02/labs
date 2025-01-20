@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isAnagram(text , text1)
+        {
+            let convText = text.replace("\g+\s" , '').toLowerCase();
+            let convText1 = text1.replace("\g+\s" , '').toLowerCase();
+            if (convText.lenght  != convText1.lenght)
+            {
+                return false;
+            }
+            convText = convText.split("").sort().join("");
+            convText1 = convText1.split("").sort().join("");
+            return convText == convText1;
+        } 
+        alert(isAnagram("xett" , "text"));
+    </script>
+</body>
+</html>
