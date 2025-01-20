@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function urez(text , n )
+        {
+            let convert = "";
+            let count = 1;
+            for (i of  text)
+            {
+                if (count == n)
+                {
+                    convert+=i;
+                    break;
+                }
+                count++;
+                convert+=i;
+            }
+            return convert+"...";
+        }
+        alert(urez("12345" , 3));
+    </script>
+</body>
+</html>
