@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let text = prompt("write Number: ");
+        isFloat = false;
+        for (i of text)
+        {
+            if (i == "." || i == ",")
+            {
+                isFloat = i;
+                break;
+            }
+        }
+        if(isFloat)
+        {
+            let array = text.split(isFloat);
+            alert("Intenger: "+array[0] + "  Float: " + array[1]);
+        }   
+        else
+        {
+            alert("Intenger: "+text);
+        }
+    </script>
+</body>
+</html>
