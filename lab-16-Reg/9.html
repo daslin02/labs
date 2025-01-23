@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(text)
+        {
+            let array = [];
+            let convert = "";
+            let isBool = false;
+            for (i of text)
+            {
+                if (i == "\'")
+                {
+                    if (isBool)
+                    {
+                        isBool = false;
+                        array.push(convert);
+                        convert = '';
+                    }
+                    else
+                    {
+                        isBool = true;
+                    }
+                }
+                if (isBool)
+                {
+                    convert+= i;
+                }
+            }
+            let convertArray = [];
+            for (i of array)
+            {
+                convertArray.push((parseInt(i.substring(1 , i.length))*2));
+            }
+            return convertArray;
+        }
+        alert(func("'8'asd'10'123"))
+    </script>
+</body>
+</html>

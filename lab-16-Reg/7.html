@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let texts = ["домик" , "столик" , "ключик"];
+        let reg = /.*ик/;
+        let convert= [];
+        for (i of texts)
+        {
+            if (reg.test(i))
+            {
+                convert.push(i.substring(0 , i.length-2));
+            }
+        }
+        alert(convert);
+    </script>
+</body>
+</html>
