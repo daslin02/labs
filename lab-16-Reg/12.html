@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const regex = /^(19|20)\d{2}$/;
+        document.write(regex.test("1900")+"\t"+"1900"+"<br>"); 
+        document.write(regex.test("2000")+"\t"+"2000"+"<br>"); 
+        document.write(regex.test("1800")+"\t"+"1800"+"<br>"); 
+        document.write(regex.test("2200")+"\t"+"2200"+"<br>"); 
+        document.write(regex.test("abc")+ "\t"+"abc"+"<br>");   
+    </script>
+</body>
+</html>

@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function revers(text)
+        {
+            const reg = /{(.*?)}/;
+            return reg.exec(text)[1].split("").reverse().join("");
+        }
+        alert(revers("{test}"))
+        alert(revers("call func{inner}bebe"))
+    </script>
 </body>
 </html>

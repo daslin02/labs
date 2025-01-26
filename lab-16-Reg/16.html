@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = "dsf xxx xxx sd";
+        const regex = /\b(\w+)\s+\1\b/g;
+        const result = str.replace(regex, '$1');
+        document.write(result); 
+    </script>
+</body>
+</html>

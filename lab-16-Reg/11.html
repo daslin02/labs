@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function eval(text)
+        {
+            const reg = /\d+/g;
+            const arrayNum = text.match(reg);
+            return text + (parseInt(arrayNum[0]) +  parseInt(arrayNum[1]));  
+        }
+        alert(eval("23+76= "));
+        alert(eval("11 + 26 = " ));
+    </script>
+</body>
+</html>

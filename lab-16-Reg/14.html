@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const regex = /^(0?[1-9]|1[0-2])\.(0[0-9]|[1-5][0-9])\s?(AM|PM|am|pm)$/;
+        
+        document.write(regex.test("9.59 am")+"<br>"); 
+        document.write(regex.test("12.30 pm")+"<br>"); 
+        document.write(regex.test("24.00 am")+"<br>"); 
+        document.write(regex.test("12.60 pm")+"<br>"); 
+        document.write(regex.test("abc am")+"<br>");
+    </script>
+</body>
+</html>
