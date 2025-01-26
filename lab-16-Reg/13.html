@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const regex = /^(?:[01]?\d|2[0-3]):[0-5]\d$/;
+        document.write(regex.test("12:59")+"12:59"+"<br>");
+        document.write(regex.test("23:41")+"23:41"+"<br>");
+        document.write(regex.test("12:93")+"12:93"+"<br>"); 
+        document.write(regex.test("41:93")+"41:93"+"<br>"); 
+    </script>
+</body>
+</html>

@@ -7,7 +7,21 @@
 </head>
 <body>
     <script>
-        
+        function isvalidPhone(phone)
+        {
+            const regex = /^(?:\+7|8)?\s?\(?(\d{3})\)?[\s-]?(\d{3})[\s-]?(\d{2})[\s-]?(\d{2})$/;
+            return regex.test(phone);
+        }
+        let phones = [ "89001234567" , "+79001234567",
+                    "8 900 123 45 67" ,  "+7 900 123 45 67",
+                    "8 (900) 123-45-67" , "+7 (900) 123-45-67",
+                    "8(900)123-45-67" ,  "+7(900)123-45-67"];
+        for (i of phones)
+        {
+            document.write("phone: " + i + "\tstatus: " + isvalidPhone(i) + "<br>");
+        }
+        document.write("phone: " + "8 921 123-10 78" + "\tstatus: " + isvalidPhone("9 921 123-10 78") + "<br>");
+        document.write("phone: " + "9 800 123-90-67" + "\tstatus: " + isvalidPhone("9 800 123-90-67") + "<br>");
     </script>
 </body>
 </html>
