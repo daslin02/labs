@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+</head>
+<body>
+    <div id = "click">
+        <h1 class="click">NO click me Please</h1>
+    </div>
+    <script>
+        document.getElementById("click").addEventListener("click" , function() 
+        {
+            alert(this.tagName.toLowerCase());
+        });
+    </script>
+</body>
+</html>
