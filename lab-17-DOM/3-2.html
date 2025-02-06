@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="www">hello</h1>
+    <button class="www">clicked</button>
+    <h2 class="www">is h2 - </h2>
+    <script>
+        let contents = document.getElementsByClassName("www");
+        for (i of contents)
+        {
+            
+            i.textContent += "-" + i.tagName;
+        }
+    </script>
+</body>
+</html>
