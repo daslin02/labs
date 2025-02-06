@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h1>имя:
+        <input type="text" class="text" id="name">
+    </div>
+    <div class="box">
+        <h1>кол-во пончиков
+        <input type="text" class="num" id="donuts">
+    </div>
+    <div class="box">
+        <h1>минут:
+        <input type="text" class="num" id="pickUpMinutes">
+    </div>
+    <div class="box">
+        <h1>подитог:
+        <input type="text" class="num" id="poditog">
+    </div>
+    <div class="box">
+        <h1>налог:
+        <input type="text" class="num" id="tax">
+    </div>
+    <div class="box">
+        <h1>итог:
+        <input type="text" class="num" id="itog">
+    </div>
+    <script>
+        let elements = document.getElementsByClassName("num");
+        for (i of elements)
+        {
+            i.value = "0";
+        }
+    </script>
+</body>
+</html>
