@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="image1.jpg" alt="" height="100" width="100">
+    <img src="image2.jpg" alt="" height="100" width="100">
+    <img src="image3.jpg" alt="" height="100" width="100">
+    <script>
+        let imgs = document.getElementsByTagName("img");
+        for (i of imgs)
+        {
+            i.width = 200;
+            i.height = 200;
+        }
+    </script>
+</body>
+</html>

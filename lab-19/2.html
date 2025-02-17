@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="mi" src="image4.jpg" alt="" height="100" width="100" onclick="getName()">
+    <script>
+        function getName()
+        {
+            let img = document.getElementById("mi");
+            let name = prompt("write your name: ");
+            alert("hello "+ name);
+            img.src = "image2.jpg"
+        }
+    </script>
+</body>
+</html>
