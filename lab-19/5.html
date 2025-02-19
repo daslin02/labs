@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        button
+        {
+            padding: 15px;
+        }
+    </style>
+    <img src="image5.jpg" alt="" id = "3"  height="100" width="100" value = "10">
+    <img src="image5.jpg" alt="" id = "0"  height="100" width="100">
+    <img src="image5.jpg" alt="" id = "1"  height="100" width="100">
+    <img src="image5.jpg" alt="" id = "2"  height="100" width="100">
+    <button onclick="isBlock()">find block</button>
+    <script>
+        let chair = document.getElementsByTagName("img");
+        let block = [];
+        block.push(chair[0]);
+        block.push(chair[3]);
+        function isBlock()
+        {
+            for (i of chair)
+            {
+                if (i.id in block)
+                {
+                    i.style = "border: 5px solid red";
+                }
+                else
+                {
+                    i.style = "border: 5px solid green";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
