@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        form
+        {
+            border: 3px solid blue;
+            padding-top: 10px;
+            margin: 10px;
+        }
+        h4
+        {
+            margin-left: 300px;
+            color: blue;
+        }
+        h2
+        {
+            color:red;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+        button
+        {
+            margin: 10px;
+        }
+    </style>
+    <form >
+        <h1 id = "big"></h1>
+        <h4 id = "result">Result</h4>
+        <h2 id = "h">Method click flag</h2>
+        <input type="checkbox"  id = "check" > flag switch boolean value
+        <br>
+
+        <button type="submit" onclick="biba(event )" >swich flag value</button>
+    </form>
+    <script>
+        function biba(event )
+        {
+            event.preventDefault();
+            let res = document.getElementById("check");
+            res.checked = !res.checked;
+        }
+    </script>
+</body>
+</html>
