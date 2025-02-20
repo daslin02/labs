@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+        h3 {
+            margin-left: 200px;
+            color: blue;
+        }
+        h1 {
+            color: red;
+        }
+        .field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        label {
+            width: 100px;
+            margin-right: 10px; 
+            border: 1px solid black;
+            padding: 5px;
+        }
+        input {
+            flex: 1; 
+        }
+        div
+        {
+            width: 300px;
+            border: 1px solid black;
+        }
+        button
+        {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h3>Result</h3>
+        <h1>заполнение анкеты</h1>
+        <div>
+            <br>
+            <div class="base">
+                <div class="field">
+                    <label>фамилия:</label>
+                    <input type="text">
+                </div>
+                <div class="field">
+                    <label>Имя:</label>
+                    <input type="text">
+                </div>
+                <div class="field">
+                    <label>Возраст:</label>
+                    <input type="number">
+                </div>
+                <div class="field">
+                    <label>Телефон:</label>
+                    <input type="tel">
+                </div>
+            </div>
+            <br>
+        </div>        
+
+        <button type="submit">готово</button>
+        <br>
+        <button type="reset">сброс</button> 
+    </form>
+</body>
+</html>
