@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        form
+        {
+            border: 3px solid blue;
+            padding-top: 10px;
+            margin: 10px;
+        }
+        h4
+        {
+            margin-left: 300px;
+            color: blue;
+        }
+        h2
+        {
+            color:red;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+        button
+        {
+            margin: 10px;
+        }
+    </style>
+    <form >
+        <h1 id = "big"></h1>
+        <h4 id = "result">Result</h4>
+        <h2 id = "h">method click group switch</h2>
+        <input id="male" type="radio" checked>male
+        <br>
+        <input id="female" type="radio"!checked>female
+        <br>
+        <button type="submit" onclick="biba(event)" >switch gender</button>
+    </form>
+    <script>
+        function biba(event)
+        {
+            event.preventDefault();
+            let male = document.getElementById("male");
+            let female = document.getElementById("female");
+            if ((male.checked || female.checked)&& !(male.checked && female.checked) )
+            {
+                male.checked = !male.checked;
+                female.checked = !female.checked;
+            }
+            else 
+            {
+                alert("не возможно поменять местами значения они будут отключены");
+                male.checked = !male.checked;
+                female.checked = !female.checked;
+            }
+        }
+    </script>
+</body>
+</html>
