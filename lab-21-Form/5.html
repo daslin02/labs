@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id = "form">
+        <input type="text" id = "nameInp" placeholder="name">
+        <br>
+        <input class = "rad" id ="ice" type="checkbox" > Мороженное
+        <br>
+        <input class = "rad" id = "cho" type="checkbox"> Шоколад
+        <br>
+        <button type="submit" onclick="thank()" >login</button>
+    </form>
+    <script>
+        const nameInp = document.getElementById("nameInp");
+        nameInp.addEventListener("input" , function()
+        {   
+            nameInp.textContent = "ввод имени";
+        });
+        let rad = document.getElementsByClassName("rad");
+        for (i of rad)
+        {
+            i.checked = false;
+            i.addEventListener("change" , update);
+        }
+        const form = document.getElementById("form");
+        function update()
+        {
+            let message = "";
+            let ice =document.getElementById("ice");
+            if(ice.checked) {message+= "ice"}
+            let chock = document.getElementById("cho");
+            if(chock.checked) {message+="     chocolate"}
+            alert(message);
+        }
+        function thank()
+        {
+            alert("спасибо " +nameInp.value);
+        }
+    </script>
+</body>
+</html>
