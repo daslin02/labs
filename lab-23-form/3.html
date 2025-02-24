@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <h1 id = "res"></h1>
+        <h4>Введите число 1 :</h4>
+        <br>
+        <input type="number" id = "one">
+        <br>
+        <h4>Введите число 2 :</h4>
+        <input type="number" id = "two">
+        <br>
+        <br>
+        <button onclick="sum(event)" >Сложить</button>
+        <button onclick="subStract(event)">Вычесть</button>
+        <button onclick="multiply(event)">Умножить</button>
+        <button onclick="devide(event)">Разделить</button>
+    </form>
+    <script>
+        function sum(event)
+        {
+            event.preventDefault();
+            let result = document.getElementById("res");
+            let one = document.getElementById("one");
+            let two = document.getElementById("two");
+            one = parseInt(one.value);
+            two = parseInt(two.value);
+            res.textContent = one + two;
+            
+        }
+        function subStract(event)
+        {
+            event.preventDefault();
+            let result = document.getElementById("res");
+            let one = document.getElementById("one");
+            let two = document.getElementById("two");
+            one = parseInt(one.value);
+            two = parseInt(two.value);
+            res.textContent = one - two;
+            
+        }
+        function multiply(event)
+        {
+            event.preventDefault();
+            let result = document.getElementById("res");
+            let one = document.getElementById("one");
+            let two = document.getElementById("two");
+            one = parseInt(one.value);
+            two = parseInt(two.value);
+            res.textContent = one * two;
+            
+        }
+        function devide(event)
+        {
+            event.preventDefault();
+            let result = document.getElementById("res");
+            let one = document.getElementById("one");
+            let two = document.getElementById("two");
+            one = parseInt(one.value);
+            two = parseInt(two.value);
+            res.textContent = one / two;
+            
+        }
+    </script>
+</body>
+</html>
