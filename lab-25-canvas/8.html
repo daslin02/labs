@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ромб с градиентом и текстом</title>
+</head>
+<body>
+    <canvas id="main" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+
+        const centerX = 250; 
+        const centerY = 250; 
+        const width = 200;   
+        const height = 300;  
+
+        const topX = centerX;
+        const topY = centerY - height / 2;
+        const rightX = centerX + width / 2;
+        const rightY = centerY;
+        const bottomX = centerX;
+        const bottomY = centerY + height / 2;
+        const leftX = centerX - width / 2;
+        const leftY = centerY;
+
+        const gradient = ctx.createLinearGradient(centerX, topY, centerX, bottomY);
+        gradient.addColorStop(0, "cyan"); 
+        gradient.addColorStop(1, "blue"); 
+
+        ctx.beginPath();
+        ctx.moveTo(topX, topY);
+        ctx.lineTo(rightX, rightY);
+        ctx.lineTo(bottomX, bottomY);
+        ctx.lineTo(leftX, leftY);
+        ctx.closePath();
+
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        const text = "Щербаков Артём";
+        ctx.font = "bold 20px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 2;
+        ctx.strokeText(text, centerX, centerY);
+
+        ctx.fillStyle = "white";
+        ctx.fillText(text, centerX, centerY);
+    </script>
+</body>
+</html>
