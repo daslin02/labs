@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        canvas
+        {
+            border: 2px solid p
+        }
+    </style>
+    <canvas id = "main" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+        let radius = 5 ;
+        let colors =  ["blue" , "purple" , "aqua" , "red" , "plum",
+            "blue" , "purple" , "green"
+        ];
+        let basePosition = 30;
+        let count = 0;
+        function drawCircle( x , y ,radius , color )
+        {
+            ctx.beginPath();
+            ctx.arc(x,y,radius,0 ,Math.PI *2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+        for (let i = 0 ; i < 8 ; i++)
+        {
+            drawCircle(i*25 +basePosition, i *25+ basePosition , radius , colors[count]);
+            radius += 5;
+            count++;
+        }
+    </script>
+</body>
+</html>
