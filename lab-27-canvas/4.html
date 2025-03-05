@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "main" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+        const radius = 14;
+        const topM = 100;
+        const arr = [50 , 80 , 110 , 140 ,170 , 200 , 230 , 260 , 290];
+        const colors = ["red" , "green" , "blue" , "orange" , "cyan" , "purple"];
+
+        function drawCircle(x , y , radius , color)
+        {
+            ctx.beginPath();
+            ctx.arc(x,y,radius,0 ,Math.PI *2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+        arr.forEach((x,index) => 
+        {
+            drawCircle(x , topM , radius , colors[index]);
+        });
+    </script>
+</body>
+</html>

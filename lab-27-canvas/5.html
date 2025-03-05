@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "main" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+        function drawCircle(radius , color )
+        {
+            ctx.beginPath();
+            ctx.arc(250,250,radius,0 ,Math.PI *2);
+            ctx.fillStyle = color;
+            ctx.globalAlpha = 0.3;
+            ctx.fill();
+            ctx.closePath();
+        }
+        drawCircle(10 , "#ff0000");
+        drawCircle(20 , "#00ff00");
+        drawCircle(30 , "#0000ff");
+        drawCircle(15 , "#ffff00");
+        drawCircle(25 , "#00ffff");
+        drawCircle(37 , "#ff00ff");
+
+    </script>
+</body>
+</html>

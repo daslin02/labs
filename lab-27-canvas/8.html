@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "main" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+        function drawCircle(radius , color )
+        {
+            ctx.beginPath();
+            ctx.arc(200,200,radius,0 ,Math.PI *2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+        }
+        function drawTriangle(x, y) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + 150, y - 100);
+            ctx.lineTo(x + 150, y + 100);
+            ctx.closePath();
+            ctx.fillStyle = "#ffffff";
+            ctx.fill();
+        }
+
+        drawCircle(100, "yellow");
+        drawTriangle(200,200)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "main"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+        const to = 10 ;
+        const margi = 15 ;
+        const biba = [10 , 30 , 50 ,70 ,90 , 110 , 130];
+        function drawSquare(x,y,size)
+        {
+            ctx.fillRect(x,y,size,size);
+        }
+        biba.forEach(x=> {drawSquare(x,to, margi)});
+    </script>
+</body>
+</html>
