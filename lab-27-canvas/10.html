@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Circle Grid</title>
+</head>
+<body>
+    <canvas id="main" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+
+        function interpolateColor(color1, color2, factor) {
+            let result = color1.slice();
+            for (let i = 0; i < 3; i++) {
+                result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+            }
+            return result;
+        }
+
+        function rgbToString(rgb) {
+            return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+        }
+
+        function drawCircle(x, y, radius, color) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        const topLeft = [173, 216, 230]; 
+        const topRight = [0, 128, 0]; 
+        const bottomLeft = [128, 0, 128]; 
+        const bottomRight = [0, 0, 139]; 
+
+        let positionX = 50;
+        let positionY = 50;
+        let radius = 20;
+        let spacing = 50; 
+        let rows = 6;
+        let cols = 6;
+
+        for (let i = 0; i < rows; i++) {
+            positionX = 50; 
+            for (let j = 0; j < cols; j++) {
+                let colorTop = interpolateColor(topLeft, topRight, j / (cols - 1));
+                let colorBottom = interpolateColor(bottomLeft, bottomRight, j / (cols - 1));
+                let color = interpolateColor(colorTop, colorBottom, i / (rows - 1));
+
+                let colorString = rgbToString(color);
+
+                drawCircle(positionX, positionY, radius, colorString);
+                positionX += spacing; 
+            }
+            positionY += spacing; 
+        }
+    </script>
+</body>
+</html>

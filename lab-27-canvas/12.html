@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Circle Grid</title>
+</head>
+<body>
+    <canvas id="main" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById("main");
+        const ctx = canvas.getContext('2d');
+
+
+        function drawRect(x,y,  sizeX ,sizeY , color , alpha)
+        {
+            ctx.globalAlpha = alpha;
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, sizeX, sizeY);
+        }
+        function drawStroke(x,y,  sizeX ,sizeY , color )
+        {
+            ctx.strokeStyle = color;
+            ctx.globalAlpha = 1;
+            ctx.lineWidth = 5;
+            ctx.strokeRect(x, y, sizeX, sizeY);
+        }
+        drawRect(10,10,200,50,"yellow",1);
+        drawRect(10,60,200,50,"green",1);
+        drawRect(10,110,200,50,"blue",1);
+        drawRect(10,160,200,50,"red",1);
+        for (let i = 100 ; i > 0 ; i--)
+        {
+            drawRect(10+i*10,10,20,50,"white",i/20);
+        }
+        for (let i = 100 ; i > 0 ; i--)
+        {
+            drawRect(10+i*10,60,20,50,"white",i/20);
+        }
+        for (let i = 100 ; i > 0 ; i--)
+        {
+            drawRect(10+i*10,110,20,50,"white",i/20);
+        }
+        for (let i = 100 ; i > 0 ; i--)
+        {
+            drawRect(10+i*10,160,20,50,"white",i/20);
+        }
+        drawStroke(10,10,200,50,"yellow");
+        drawStroke(10,60,200,50,"green");
+        drawStroke(10,110,200,50,"blue");
+        drawStroke(10,160,200,50,"red");
+    </script>
+</body>
+</html>
