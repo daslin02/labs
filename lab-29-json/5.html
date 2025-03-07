@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+</head>
+<body onload="load()">
+    <div id="countdown"></div>
+
+    <script>
+        const initialTime = 10;
+
+        function getCookie(name) {
+            const cookies = document.cookie.split('; ');
+            for (const cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.split('=');
+                if (cookieName === name) {
+                    return parseInt(cookieValue, 10);
+                }
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+        }
+
+        function load() {
+            let remainingTime = getCookie('remainingTime');
+
+            if (remainingTime === null || isNaN(remainingTime)) {
+                remainingTime = initialTime;
+                setCookie('remainingTime', remainingTime, 1); 
+            }
+
+            const countdownElement = document.getElementById('countdown');
+
+            function updateCountdown() {
+                countdownElement.textContent = `Осталось времени: ${remainingTime} секунд`;
+
+                if (remainingTime <= 0) {
+                    countdownElement.textContent = 'Отсчет закончен';
+                    clearInterval(interval);
+                    document.cookie = 'remainingTime=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; 
+                } else {
+                    remainingTime--;
+                    setCookie('remainingTime', remainingTime, 1); 
+                }s
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown(); 
+        }
+    </script>
+</body>
+</html>
