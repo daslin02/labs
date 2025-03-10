@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ферма животных</title>
+</head>
+<body>
+    <h1>Ферма животных</h1>
+    <p id="totalAge"></p>
+
+    <script>
+        const farm = [
+        {
+            name: "Мурка",
+            age: 5,
+            type: "Кошка",
+            children: [
+            {
+                name: "Барсик",
+                age: 2,
+                type: "Кошка",
+                children: []
+            }
+            ]
+        },
+        {
+            name: "Шарик",
+            age: 7,
+            type: "Собака",
+            children: [
+            {
+                name: "Тузик",
+                age: 3,
+                type: "Собака",
+                children: []
+            }
+            ]
+        },
+        {
+            name: "Зорька",
+            age: 10,
+            type: "Корова",
+            children: []
+        }
+        ];
+
+        function calculateTotalAge(animals) {
+            let totalAge = 0;
+
+            function sumAge(animal) {
+                totalAge += animal.age;
+                if (animal.children && animal.children.length > 0) {
+                    animal.children.forEach(child => sumAge(child));
+                }
+            }
+
+        animals.forEach(animal => sumAge(animal));
+
+        return totalAge;
+        }
+
+        const totalAge = calculateTotalAge(farm);
+
+        document.getElementById('totalAge').textContent = `Общий возраст всех животных на ферме: ${totalAge} лет.`;
+    </script>
+</body>
+</html>

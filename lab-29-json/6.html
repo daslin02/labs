@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посещение страницы</title>
+
+</head>
+<body>
+    <h1>Добро пожаловать на страницу!</h1>
+    <div class="info" id="visitInfo"></div>
+
+    <script>
+        function getCurrentTime() {
+            return new Date().getTime();
+        }
+
+        function formatTime(milliseconds) {
+            const seconds = Math.floor(milliseconds / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            if (days > 0) {
+                return `${days} дней, ${hours % 24} часов, ${minutes % 60} минут, ${seconds % 60} секунд`;
+            } else if (hours > 0) {
+                return `${hours} часов, ${minutes % 60} минут, ${seconds % 60} секунд`;
+            } else if (minutes > 0) {
+                return `${minutes} минут, ${seconds % 60} секунд`;
+            } else {
+                return `${seconds} секунд`;
+            }
+        }
+
+        const pageKey = 'pageVisitData_' + window.location.pathname;
+
+        let visitData = JSON.parse(localStorage.getItem(pageKey)) || {
+            lastVisitTime: null,
+            visitCount: 0
+        };
+
+        const currentTime = getCurrentTime();
+
+        if (visitData.lastVisitTime) {
+            const timeSinceLastVisit = currentTime - visitData.lastVisitTime;
+            visitData.visitCount += 1;
+
+            visitData.lastVisitTime = currentTime;
+            localStorage.setItem(pageKey, JSON.stringify(visitData));
+
+            document.getElementById('visitInfo').innerText = 
+                `С последнего захода прошло ${formatTime(timeSinceLastVisit)}. Вы посещали эту страницу ${visitData.visitCount} раз.`;
+        } else {
+            visitData.lastVisitTime = currentTime;
+            visitData.visitCount = 1;
+            localStorage.setItem(pageKey, JSON.stringify(visitData));
+
+            document.getElementById('visitInfo').innerText = 
+                'Это ваш первый заход на эту страницу.';
+        }
+    </script>
+</body>
+</html>

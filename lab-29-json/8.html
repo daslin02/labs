@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сохраняемый размер Textarea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        textarea {
+            resize: both; /* Позволяет изменять размер */
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Изменяемый размер Textarea</h1>
+    <textarea id="resizableTextarea" placeholder="Введите текст..."></textarea>
+
+    <script>
+        const textareaSizeKey = 'textareaSize';
+
+        const textarea = document.getElementById('resizableTextarea');
+
+        function saveTextareaSize() {
+            const size = {
+                width: textarea.offsetWidth,
+                height: textarea.offsetHeight
+            };
+            localStorage.setItem(textareaSizeKey, JSON.stringify(size));
+        }
+
+        function loadTextareaSize() {
+            const savedSize = JSON.parse(localStorage.getItem(textareaSizeKey));
+            if (savedSize) {
+                textarea.style.width = `${savedSize.width}px`;
+                textarea.style.height = `${savedSize.height}px`;
+            }
+        }
+
+        loadTextareaSize();
+
+        textarea.addEventListener('mouseup', saveTextareaSize);
+        textarea.addEventListener('touchend', saveTextareaSize); 
+    </script>
+</body>
+</html>

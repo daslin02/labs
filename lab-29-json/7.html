@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекламный блок</title>
+</head>
+<body>
+    <div class="ad" id="adBlock">
+        <p>Специальное предложение! Купите сейчас и получите скидку 50%!</p>
+        <button id="hideAdButton">Убрать</button>
+    </div>
+
+    <script>
+        const adKey = 'adVisibility';
+
+        const currentTime = new Date().getTime();
+
+        let adData = JSON.parse(localStorage.getItem(adKey)) || {
+            hiddenUntil: 0 
+        };
+
+
+        document.getElementById('hideAdButton').addEventListener('click', () => {
+            const oneDayInMillis = 24 * 60 * 60 * 1000; 
+            adData.hiddenUntil = currentTime + oneDayInMillis;
+
+            localStorage.setItem(adKey, JSON.stringify(adData));
+        });
+    </script>
+</body>
+</html>
