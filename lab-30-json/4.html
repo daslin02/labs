@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* sequence(start , step )
+        {
+            while(true)
+            {
+                yield start;
+                start+= step;
+            }
+        }
+        function square(num)
+        {
+            return num *num ;
+        }
+        function add (a,b)
+        {
+            return a+b;
+        }
+        function* fMap(fn,generate)
+        {   
+            while(true)
+            {
+                val = generate.next().value;
+                yield fn(val);
+            }
+        }
+        let gen = sequence(1,1);
+        let test = fMap(square,gen);
+
+        console.log(test.next().value);
+        console.log(test.next().value);
+        console.log(test.next().value);
+        console.log(test.next().value);
+    </script>
+</body>
+</html>

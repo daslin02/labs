@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* sequence (start , step )
+        {
+            while(true)
+            {
+                yield start;
+                start+= step;
+            }
+        }
+        let gen = sequence(10,3);
+        let gen2 = sequence(7,1);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen2.next().value);
+        console.log(gen.next().value);
+        console.log(gen2.next().value);
+    </script>
+</body>
+</html>

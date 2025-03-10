@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запрет букв Q, W, X</title>
+    <style>
+        /* Стилизация поля ввода */
+        #textInput {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Введите текст</h1>
+    <input type="text" id="textInput" placeholder="Введите текст...">
+    <p class="error" id="errorMessage">Запрещено использовать буквы Q, W, X!</p>
+
+    <script>
+        const textInput = document.getElementById('textInput');
+        const errorMessage = document.getElementById('errorMessage');
+
+        function validateInput(event) {
+            const inputValue = textInput.value;
+            const reg = /[qwxQWX]/g;
+
+            if (reg.test(inputValue)) {
+                errorMessage.style.display = 'block';
+                textInput.value = inputValue.replace(reg, '');
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        }
+        textInput.addEventListener('input', validateInput);
+    </script>
+</body>
+</html>
